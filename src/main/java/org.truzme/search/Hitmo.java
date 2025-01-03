@@ -1,6 +1,9 @@
 package org.truzme;
 
+import java.util.List;
 import java.util.ArrayList;
+import java.net.URL;
+import java.net.HttpURLConnection;
 
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
@@ -10,8 +13,8 @@ import org.jsoup.select.Elements;
 public class Hitmo {
 	private static String base_url = "https://rus.hitmotop.com";
 
-	public static ArrayList<Track> search(String query) {
-		ArrayList<Track> results = new ArrayList<>();
+	public static List<Track> search(String query) {
+		List<Track> results = new ArrayList<>();
 
 		try {
 			Document document = Jsoup.connect(base_url + "/search?q=" + query.replace(' ', '+')).get();
@@ -25,14 +28,14 @@ public class Hitmo {
 			for (Element track : track_list) {
 				String trackTitle = track.select("div.track__title").text().strip();
 				String trackDescription = track.select("div.track__desc").text();
-				String trackFullTime = track.select("div.track__fulltime").text();
+				String trackDuration = track.select("div.track__fulltime").text();
 				String trackUrl = base_url + track.select("a.track__info-l").attr("href");
 				String trackDownloadUrl = track.select("a.track__download-btn").attr("href");
 
 				Track trackData = new Track(
 					trackTitle,
 					trackDescription,
-					trackFullTime,
+					trackDuration,
 					trackUrl,
 					trackDownloadUrl
 				);
