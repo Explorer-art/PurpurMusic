@@ -20,23 +20,23 @@ public class Track {
 		this.downloadUrl = downloadUrl;
 	}
 
-	public String title() {
+	public String getTitle() {
 		return title;
 	}
 
-	public String description() {
+	public String getDescription() {
 		return description;
 	}
 
-	public String duration() {
+	public String getDuration() {
 		return duration;
 	}
 
-	public String url() {
+	public String getUrl() {
 		return url;
 	}
 
-	public String downloadUrl() {
+	public String getDownloadUrl() {
 		return downloadUrl;
 	}
 

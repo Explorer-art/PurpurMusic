@@ -38,11 +38,11 @@ public class PurpurMusic {
 		List<Track> track_list = Hitmo.search(args[0]);
 
 		for (int i = 0; i < track_list.size(); i++) {
-			System.out.printf("%d. Title: %s\n", i + 1, track_list.get(i).title());
-			System.out.printf("    Description: %s\n", track_list.get(i).description());
-			System.out.printf("    Duration: %s\n", track_list.get(i).duration());
-			System.out.printf("    URL: %s\n", track_list.get(i).url());
-			System.out.printf("    Download URL: %s\n\n", track_list.get(i).downloadUrl());
+			System.out.printf("%d. Title: %s\n", i + 1, track_list.get(i).getTitle();
+			System.out.printf("    Description: %s\n", track_list.get(i).getDescription();
+			System.out.printf("    Duration: %s\n", track_list.get(i).getDuration();
+			System.out.printf("    URL: %s\n", track_list.get(i).getUrl();
+			System.out.printf("    Download URL: %s\n\n", track_list.get(i).getDownloadUrl();
 		}
 
 		System.out.printf("Total results: %d\n\n", track_list.size());
@@ -52,9 +52,9 @@ public class PurpurMusic {
 		System.out.print("> ");
 		int downloadTrack = in.nextInt() - 1;
 
-		System.out.printf("Track %s downloading...\n", track_list.get(downloadTrack).title());
+		System.out.printf("Track %s downloading...\n", track_list.get(downloadTrack).getTitle());
 		track_list.get(downloadTrack).download("track.mp3");
-		System.out.printf("Track %s downloaded!\n", track_list.get(downloadTrack).title());
+		System.out.printf("Track %s downloaded!\n", track_list.get(downloadTrack).getTitle());
 
 		in.close();
 	}
