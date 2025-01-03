@@ -9,12 +9,6 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 
 public class PurpurMusic {
 	public static void main(String[] args) {
-		if (args.length < 1) {
-			System.out.println("Usage:");
-			System.out.println("java -jar PurpurMusic.jar [query]");
-			return;
-		}
-
 		Config config;
 
 		try {
@@ -35,6 +29,12 @@ public class PurpurMusic {
 			e.printStackTrace();
 		}
 
+		if (args.length < 1) {
+			System.out.println("Usage:");
+			System.out.println("java -jar PurpurMusic.jar [query]");
+			return;
+		}
+
 		List<Track> track_list = Hitmo.search(args[0]);
 
 		for (int i = 0; i < track_list.size(); i++) {
@@ -50,7 +50,7 @@ public class PurpurMusic {
 		Scanner in = new Scanner(System.in);
 
 		System.out.print("> ");
-		int downloadTrack = in.nextInt();
+		int downloadTrack = in.nextInt() - 1;
 
 		System.out.printf("Track %s downloading...\n", track_list.get(downloadTrack).title());
 		track_list.get(downloadTrack).download("track.mp3");
