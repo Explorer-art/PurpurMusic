@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" 
+	xmlns="http://javafx.com/javafx/11.0.1" 
+	xmlns:fx="http://javafx.com/fxml/1"
+	fx:controller="org.truzme.MyController">
+	
+   <children>
+      <Button fx:id="myButton" 
+      	text="Click to Show Time"
+      	layoutX="241.0" layoutY="156.0" 
+      	mnemonicParsing="false" 
+      	onAction="#showDateTime"/>
+      
+      <TextField fx:id="myTextField" 
+      	layoutX="225.0" layoutY="219.0" />
+   </children>
+</AnchorPane>
